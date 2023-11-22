@@ -1,0 +1,4 @@
+#Open AI key files
+*.[Ee]nv
+.env
+openaiget.py

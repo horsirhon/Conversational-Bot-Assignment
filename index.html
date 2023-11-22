@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Osahon's Bot</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="chat">
+      <div class="chat-header">
+        <span>Osahon's Bot</span>
+      </div>
+
+      <div class="chat-messages">
+        <textarea id="chat-content" rows="10" readonly></textarea>
+      </div>
+
+      <div class="chat-input">
+        <textarea id="chat-input" rows="3"></textarea>
+        <button type="submit" onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+
+    <script>
+      function sendMessage() {
+        const chatInput = document.getElementById('chat-input');
+        const chatContent = document.getElementById('chat-content');
+        const message = chatInput.value;
+
+        if (message.trim()) {
+          chatContent.value += `\n[You]: ${message}`;
+          chatInput.value = '';
+        }
+
+        chatContent.scrollTop = chatContent.scrollHeight;
+      }
+    </script>
+  </body>
+</html>
